@@ -1,7 +1,7 @@
-if(file.exists('./HOSVD.R')){
-	source('./HOSVD.R')
+if(file.exists('./TensorUtil.R')){
+	source('./TensorUtil.R')
 }else{
-	source('~/Documents/Tensor/TensorEngine/HOSVD.R')
+	source('~/Documents/Tensor/TensorEngine/TensorUtil.R')
 }
 library(slam)
 library(MASS)

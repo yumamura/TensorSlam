@@ -3,10 +3,10 @@ library(slam)
 library(rTensor)
 library(doMC)
 
-if(file.exists('./HOSVD.R')){
-	source('./HOSVD.R')
+if(file.exists('./TensorUtil.R')){
+	source('./TensorUtil.R')
 }else{
-	source('~/Documents/Tensor/TensorEngine/HOSVD.R')
+	source('~/Documents/Tensor/TensorEngine/TensorUtil.R')
 }
 
 if(file.exists('./FSTD.R')){
@@ -48,14 +48,14 @@ MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD
 
 	}
 	#         print('Perform LRA')
-	if(method=='HOSVD'){
-	hosvd_res <- HOSVD(y,lra_ranks,doMC=F)
+	if(method=='TensorUtil'){
+	hosvd_res <- TensorUtil(y,lra_ranks,doMC=F)
 	}else{
 		hosvd_res <- FSTDFixedFNum(y,lra_ranks)
 	}
 	#         save(hosvd_res,file='/home/data/boru/hosvd_res.Rdata')
 
-	#         y_approx <- reconstHOSVD(hosvd_res) 
+	#         y_approx <- reconstTensorUtil(hosvd_res) 
 	#         save(y_approx,file='/home/data/boru/y_approx.Rdata')
 
 	g_t <- hosvd_res$g
