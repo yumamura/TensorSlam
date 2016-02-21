@@ -12,7 +12,8 @@ if(1==0){
 
 kModeUnfold <- function(tnsr,m){ #モードk 行列化
 	#'@export
-
+	#'@param WIP
+	#'@return WIP
 	if(class(tnsr)=='array'){
 		mat <- t(apply(tnsr,m,cBind))
 		return(mat)
@@ -72,6 +73,8 @@ kModeUnfold <- function(tnsr,m){ #モードk 行列化
 Refold <- function(mat,dimToRecover,mode){ #行列化されたやつを再びテンソルに
 
 	#'@export
+	#'@param WIP
+	#'@return WIP
 	#dimToRecoverの長さはtnsrの次元
 	recoverOrder <- c(dimToRecover[mode],dimToRecover[-mode])
 	mode.num <- c(mode,(1:length(dimToRecover))[-mode])
@@ -125,6 +128,8 @@ kModeProduct <- function(tnsr,mat,m){
 
 
 	#'@export
+	#'@param WIP
+	#'@return WIP
 	tnsr.mat <- kModeUnfold(tnsr,m)
 	tnsr.mat <- as.simple_triplet_matrix(tnsr.mat)
 	if(class(mat)!='simple_triplet_matrix') mat <- as.simple_triplet_matrix(mat)
@@ -148,6 +153,8 @@ kModeProduct <- function(tnsr,mat,m){
 as.sparseMatrix.simple_sparse_array <- function(mat){
 
 	#'@export
+	#'@param WIP
+	#'@return WIP
 	mat <- sparseMatrix(i = mat$i[,1],j = mat$i[,2],x = mat$v,dims = mat$dim)
 	return(mat)
 }
@@ -164,6 +171,8 @@ smartsvd <- function(mat,rank=10,nu=3,nv=3){
 HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
 
 	#'@export
+	#'@param WIP
+	#'@return WIP
 	if(1==0){
 		hosvd_res <- HOSVD(y,core_dims)
 		res <- hosvd(as.tensor(as.array(y)),core_dims)
@@ -202,6 +211,8 @@ HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
 reconstHOSVD <- function(hosvd_res){
 
 	#'@export
+	#'@param WIP
+	#'@return WIP
 	g <- hosvd_res$g
 	for(n in 1:length(dim(g))){
 		g <- kModeProduct(tnsr = g,mat=hosvd_res$As[[n]],m=n)
@@ -214,6 +225,8 @@ reconstHOSVD <- function(hosvd_res){
 reconstTucker <- function(core,Wlist){
 
 	#'@export
+	#'@param WIP
+	#'@return WIP
 	for(i in 1:length(Wlist)){
 		core <- kModeProduct(tnsr=core,mat=Wlist[[i]],m=i)
 	}
