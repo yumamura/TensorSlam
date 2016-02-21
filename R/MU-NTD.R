@@ -3,17 +3,6 @@ library(slam)
 library(rTensor)
 library(doMC)
 
-if(file.exists('./TensorUtil.R')){
-	source('./TensorUtil.R')
-}else{
-	source('~/Documents/Tensor/TensorEngine/TensorUtil.R')
-}
-
-if(file.exists('./FSTD.R')){
-	source('./FSTD.R')
-}else{
-	source('~/Documents/Tensor/TensorEngine/FSTD.R')
-}
 
 if(1==0){
 	y <- as.simple_sparse_array(array(1,c(20,40,60)))
