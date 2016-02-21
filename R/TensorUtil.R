@@ -1,8 +1,6 @@
 #HOSVD for simple_sparse_array (slam)
 library(irlba)
-library(Matrix)
 library(slam)
-library(rTensor)
 library(dplyr)
 
 if(1==0){

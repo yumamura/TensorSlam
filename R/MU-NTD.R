@@ -1,6 +1,4 @@
-library(spam)
 library(slam)
-library(rTensor)
 library(doMC)
 
 

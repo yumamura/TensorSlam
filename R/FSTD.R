@@ -1,5 +1,4 @@
 library(slam)
-library(MASS)
 
 if(1==0){
 	load('~/Dropbox/Labtmp/tnsr/0d_20141201_sanihour44.Rdata')

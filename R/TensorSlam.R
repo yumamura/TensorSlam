@@ -1,5 +1,5 @@
 #' SparseTensor Calculation with Slam Package
 #'@name TensorSlam
 #'@docType package
-#'@import dplyr slam irlba
+#'@import dplyr slam irlba doMC
 NULL
