@@ -1,0 +1,11 @@
+language: R
+cache: packages
+r: release
+os: osx      
+r_packages:
+        - dplyr
+        - irlba
+        - Matrix
+        - rTensor
+        - slam
+
