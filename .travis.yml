@@ -1,7 +1,6 @@
-language: R
+language: r
+sudo: required
 cache: packages
-r: release
-os: osx      
 r_packages:
         - dplyr
         - irlba
