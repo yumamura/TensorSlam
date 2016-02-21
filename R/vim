@@ -1,0 +1,6 @@
+structure(function (obj, val, id = character()) 
+standardGeneric("push"), generic = structure("push", package = "RCurl"), package = "RCurl", group = list(), valueClass = character(0), signature = c("obj", 
+"val", "id"), default = quote(`\001NULL\001`), skeleton = quote((function (obj, 
+    val, id = character()) 
+stop("invalid call in method dispatch to 'push' (no default method)", 
+    domain = NA))(obj, val, id)), class = structure("standardGeneric", package = "methods"))
