@@ -139,7 +139,7 @@ FSTD <- function(Y,k,eps=NULL){
 
 
 FSTDFixedFNum <- function(Y,k){
-	@export
+	#'@export
 	I <- dim(Y)
 	N <- length(I)
 	# 

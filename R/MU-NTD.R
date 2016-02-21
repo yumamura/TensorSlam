@@ -37,7 +37,7 @@ if(1==0){
 }
 
 MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD',convDebug=F){
-	@export
+	#'@export
 	eps <- 2.2204e-16
 	if(convDebug==T){ #更新回数判定用
 		rA <- list(rA1=matrix(0,24,10),
