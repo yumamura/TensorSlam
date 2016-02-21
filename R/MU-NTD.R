@@ -185,6 +185,9 @@ MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD
 }
 
 ReconstMUNTD <- function(res){
+	#'@export
+	#'@param WIP
+	#'@return WIP
 	idx <- length(res$As)
 	core <- res$g
 	for(i in 1:idx){
@@ -195,6 +198,10 @@ ReconstMUNTD <- function(res){
 }
 
 checkDiff <- function(Xnew,Xold){ #2つのテンソルを受け取り，その変化率を計算する 変化率は|Xnew-Xold|/|Xold| ノルムはフロベニウス
+	#'@export
+	#'@param WIP
+	#'@return WIP
+
 	if(0){
 		Xnew <- array(1:8,dim=c(2,2,2))
 		Xnew <- array(2,dim=c(2,2,2))

@@ -48,6 +48,8 @@ inew <- function(C,old_ind){
 }
 
 FSTD <- function(Y,k,eps=NULL){
+	#'@param WIP
+	#'@return WIP
 	I <- dim(Y)
 	N <- length(I)
 

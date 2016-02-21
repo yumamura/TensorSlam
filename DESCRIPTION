@@ -11,5 +11,7 @@ Suggests:
     testthat
 Imports:
     dplyr,
-    slam
+    slam,
+    irlba,
+    doMC
 RoxygenNote: 5.0.1
