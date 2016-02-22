@@ -11,6 +11,7 @@ test_that('3d Dense Tensor Unfold',{
 		 expect_equal(dim(ans1$i),dim(true1$i)) 
 		 expect_equal(table(ans1$i),table(true1$i)) 
 		 expect_equal(sort(ans1$v),sort(true1$v))
+		 expect_equal(as.array(ans1),as.array(true1))
 
 		 ans2 <- kModeUnfold(input,2)
 		 true2 <- as.simple_sparse_array(cbind(matrix(1:9,3,3,byrow=T),
@@ -22,6 +23,7 @@ test_that('3d Dense Tensor Unfold',{
 		 expect_equal(dim(ans2$i),dim(true2$i)) 
 		 expect_equal(table(ans2$i),table(true2$i)) 
 		 expect_equal(sort(ans2$v),sort(true2$v))
+		 expect_equal(as.array(ans2),as.array(true2))
 
 		 ans3 <- kModeUnfold(input,3)
 		 true3 <- as.simple_sparse_array(matrix(1:27,3,9,byrow=T))
@@ -31,7 +33,7 @@ test_that('3d Dense Tensor Unfold',{
 		 expect_equal(dim(ans3$i),dim(true3$i)) 
 		 expect_equal(table(ans3$i),table(true3$i)) 
 		 expect_equal(sort(ans3$v),sort(true3$v))
-		 #TODO: 4次元以上のテンソルに対するテスト
+		 expect_equal(as.array(ans3),as.array(true3))
 })
 
 
@@ -44,6 +46,7 @@ test_that('4d Dense Tensor Unfold',{
 		 expect_equal(dim(ans1$i),dim(true1$i)) 
 		 expect_equal(table(ans1$i),table(true1$i)) 
 		 expect_equal(sort(ans1$v),sort(true1$v))
+		 expect_equal(as.array(ans1),as.array(true1))
 
 		 ans2 <- kModeUnfold(input,2)
 		 true2 <- as.simple_sparse_array(cbind(matrix(1:9,3,3,byrow=T),
@@ -60,6 +63,7 @@ test_that('4d Dense Tensor Unfold',{
 		 expect_equal(dim(ans2$i),dim(true2$i)) 
 		 expect_equal(table(ans2$i),table(true2$i)) 
 		 expect_equal(sort(ans2$v),sort(true2$v))
+		 expect_equal(as.array(ans2),as.array(true2))
 
 		 ans3 <- kModeUnfold(input,3)
 		 true3 <- as.simple_sparse_array(cbind(matrix(1:27,3,9,byrow=T),
@@ -70,6 +74,7 @@ test_that('4d Dense Tensor Unfold',{
 		 expect_equal(dim(ans3$i),dim(true3$i)) 
 		 expect_equal(table(ans3$i),table(true3$i)) 
 		 expect_equal(sort(ans3$v),sort(true3$v))
+		 expect_equal(as.array(ans3),as.array(true3))
 
 		 ans4 <- kModeUnfold(input,4)
 		 true4 <- as.simple_sparse_array(matrix(1:81,3,,byrow=T))
@@ -78,6 +83,7 @@ test_that('4d Dense Tensor Unfold',{
 		 expect_equal(dim(ans4$i),dim(true4$i)) 
 		 expect_equal(table(ans4$i),table(true4$i)) 
 		 expect_equal(sort(ans4$v),sort(true4$v))
+		 expect_equal(as.array(ans4),as.array(true4))
 	})
 
 
@@ -95,6 +101,7 @@ test_that('3d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans1$i),dim(true1$i)) 
 		 expect_equal(table(ans1$i),table(true1$i)) 
 		 expect_equal(sort(ans1$v),sort(true1$v))
+		 expect_equal(as.array(ans1),as.array(true1))
 
 		 ans2 <- kModeUnfold(input,2)
 		 true2 <- as.simple_sparse_array(matrix(c(rep(1:3,3),rep(0,18)),3,9,byrow=T))
@@ -104,6 +111,7 @@ test_that('3d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans2$i),dim(true2$i)) 
 		 expect_equal(table(ans2$i),table(true2$i)) 
 		 expect_equal(sort(ans2$v),sort(true2$v))
+		 expect_equal(as.array(ans2),as.array(true2))
 
 		 ans3 <- kModeUnfold(input,3)
 		 true3 <- as.simple_sparse_array(matrix(c(rep(1:3,3),rep(0,18)),3,9,byrow=F))
@@ -113,6 +121,7 @@ test_that('3d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans3$i),dim(true3$i)) 
 		 expect_equal(table(ans3$i),table(true3$i)) 
 		 expect_equal(sort(ans3$v),sort(true3$v))
+		 expect_equal(as.array(ans3),as.array(true3))
 })
 
 test_that('4d Sparse Tensor Unfold',{
@@ -129,6 +138,7 @@ test_that('4d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans1$i),dim(true1$i)) 
 		 expect_equal(table(ans1$i),table(true1$i)) 
 		 expect_equal(sort(ans1$v),sort(true1$v))
+		 expect_equal(as.array(ans1),as.array(true1))
 
 		 ans2 <- kModeUnfold(input,2)
 		 true2 <- as.simple_sparse_array(matrix(c(rep(1:3,9),rep(0,54)),3,27,byrow=T))
@@ -138,6 +148,7 @@ test_that('4d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans2$i),dim(true2$i)) 
 		 expect_equal(table(ans2$i),table(true2$i)) 
 		 expect_equal(sort(ans2$v),sort(true2$v))
+		 expect_equal(as.array(ans2),as.array(true2))
 
 		 ans3 <- kModeUnfold(input,3)
 		 true3 <- as.simple_sparse_array(matrix(rep(c(rep(1,3),rep(2,3),rep(3,3),rep(0,18)),3),3,27,byrow=F))
@@ -147,6 +158,7 @@ test_that('4d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans3$i),dim(true3$i)) 
 		 expect_equal(table(ans3$i),table(true3$i)) 
 		 expect_equal(sort(ans3$v),sort(true3$v))
+		 expect_equal(as.array(ans3),as.array(true3))
 
 
 		 ans4 <- kModeUnfold(input,4)
@@ -157,4 +169,5 @@ test_that('4d Sparse Tensor Unfold',{
 		 expect_equal(dim(ans4$i),dim(true4$i)) 
 		 expect_equal(table(ans4$i),table(true4$i)) 
 		 expect_equal(sort(ans4$v),sort(true4$v))
+		 expect_equal(as.array(ans4),as.array(true4))
 })
