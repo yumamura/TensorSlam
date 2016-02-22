@@ -8,6 +8,8 @@ reconstTucker(core, Wlist)
 }
 \arguments{
 \item{core}{WIP}
+
+\item{Wlist}{WIP}
 }
 \value{
 WIP

@@ -1,6 +1,7 @@
 #' Other Modules
 
 #' @param C WIP
+#' @param old_ind WIP
 #' @name WIP
 NULL
 
@@ -40,9 +41,10 @@ inew <- function(C,old_ind){
 
 
 #' @rdname WIP
+#' @param Y WIP
+#' @param k WIP
+#' @param eps WIP
 FSTD <- function(Y,k,eps=NULL){
-	#'@param WIP
-	#'@return WIP
 	I <- dim(Y)
 	N <- length(I)
 

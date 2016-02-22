@@ -8,6 +8,10 @@ HOSVD(tnsr, ranks = ceiling(dim(tnsr)/10), doMC = T)
 }
 \arguments{
 \item{tnsr}{WIP}
+
+\item{ranks}{WIP}
+
+\item{doMC}{WIP}
 }
 \value{
 WIP

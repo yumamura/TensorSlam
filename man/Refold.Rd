@@ -8,6 +8,10 @@ Refold(mat, dimToRecover, mode)
 }
 \arguments{
 \item{mat}{WIP}
+
+\item{dimToRecover}{WIP}
+
+\item{mode}{WIP}
 }
 \value{
 WIP

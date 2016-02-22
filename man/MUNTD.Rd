@@ -9,6 +9,14 @@ MUNTD(y, core_dims = ceiling(dim(y)/5), lra_ranks = core_dims,
 }
 \arguments{
 \item{y}{WIP}
+
+\item{core_dims}{WIP}
+
+\item{lra_ranks}{WIP}
+
+\item{method}{WIP}
+
+\item{convDebug}{WIP}
 }
 \value{
 WIP

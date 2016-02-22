@@ -2,6 +2,9 @@
 
 #'@export
 #'@param mat WIP
+#'@param rank WIP
+#'@param nu WIP
+#'@param nv WIP
 #'@return WIP
 
 smartsvd <- function(mat,rank=10,nu=3,nv=3){
