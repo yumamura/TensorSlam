@@ -20,8 +20,8 @@ MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD
 
 	}
 	#         print('Perform LRA')
-	if(method=='TensorUtil'){
-		hosvd_res <- TensorUtil(y,lra_ranks,doMC=F)
+	if(method=='HOSVD'){
+		hosvd_res <- HOSVD(y,lra_ranks,doMC=F)
 	}else{
 		hosvd_res <- FSTDFixedFNum(y,lra_ranks)
 	}
