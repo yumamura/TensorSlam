@@ -2,6 +2,8 @@
 
 #'@export
 #'@param mat WIP
+#'@param dimToRecover WIP
+#'@param mode WIP
 #'@return WIP
 
 Refold <- function(mat,dimToRecover,mode){ #行列化されたやつを再びテンソルに

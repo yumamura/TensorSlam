@@ -2,6 +2,10 @@
 
 #'@export
 #'@param y WIP
+#'@param core_dims WIP
+#'@param lra_ranks WIP
+#'@param method WIP
+#'@param convDebug WIP
 #'@return WIP
 MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD',convDebug=F){
 
@@ -48,24 +52,24 @@ MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD
 			   })
 
 
-	if(1==0){
-		library(R.matlab)
-		tmp <- readMat('~/Downloads/ntdInit.mat')
-		g_t <- tmp$aycore
-		As_t <- list(tmp$ayu1,tmp$ayu2,tmp$ayu3)
-		g <- tmp$acore
-		As <- list(tmp$aa1,tmp$aa2,tmp$aa3)
-		eps <- 2.2204e-16
-		tol <- 1e-3
-		AtAs <- lapply(1:length(As),function(i){
-				       AtA <- crossprod_simple_triplet_matrix(as.simple_triplet_matrix(As[[i]]),as.simple_triplet_matrix(As[[i]]))
-				       return(AtA)
-			   })
-		AtyAs <- lapply(1:length(As),function(i){
-					AtyA <- crossprod_simple_triplet_matrix(as.simple_triplet_matrix(As[[i]]),as.simple_triplet_matrix(As_t[[i]]))
-					return(AtyA)
-			   })
-	}
+	#         if(1==0){
+	#                 library(R.matlab)
+	#                 tmp <- readMat('~/Downloads/ntdInit.mat')
+	#                 g_t <- tmp$aycore
+	#                 As_t <- list(tmp$ayu1,tmp$ayu2,tmp$ayu3)
+	#                 g <- tmp$acore
+	#                 As <- list(tmp$aa1,tmp$aa2,tmp$aa3)
+	#                 eps <- 2.2204e-16
+	#                 tol <- 1e-3
+	#                 AtAs <- lapply(1:length(As),function(i){
+	#                                        AtA <- crossprod_simple_triplet_matrix(as.simple_triplet_matrix(As[[i]]),as.simple_triplet_matrix(As[[i]]))
+	#                                        return(AtA)
+	#                            })
+	#                 AtyAs <- lapply(1:length(As),function(i){
+	#                                         AtyA <- crossprod_simple_triplet_matrix(as.simple_triplet_matrix(As[[i]]),as.simple_triplet_matrix(As_t[[i]]))
+	#                                         return(AtyA)
+	#                            })
+	#         }
 	#         print('Enter Main Loop')
 	MAIN <- 1
 	while(MAIN<25){ #TODO

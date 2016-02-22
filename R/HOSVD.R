@@ -2,15 +2,17 @@
 
 #'@export
 #'@param tnsr WIP
+#'@param ranks WIP
+#'@param doMC WIP
 #'@return WIP
 HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
 
-	if(1==0){
-		hosvd_res <- HOSVD(y,core_dims)
-		res <- hosvd(as.tensor(as.array(y)),core_dims)
-
-		ttm(as.tensor(as.array(g)),t(As[[1]]),1)@data
-	}
+	#         if(1==0){
+	#                 hosvd_res <- HOSVD(y,core_dims)
+	#                 res <- hosvd(as.tensor(as.array(y)),core_dims)
+	# 
+	#                 ttm(as.tensor(as.array(g)),t(As[[1]]),1)@data
+	#         }
 
 	if(doMC==F){
 		As <- lapply(1:length(dim(tnsr)),function(mode.n){

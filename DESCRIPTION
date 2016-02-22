@@ -14,5 +14,6 @@ Imports:
     slam,
     irlba,
     doMC,
-    Matrix
+    Matrix,
+    MASS
 RoxygenNote: 5.0.1
