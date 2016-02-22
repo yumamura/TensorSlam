@@ -1,9 +1,12 @@
+#' kModeProduct
+
+#'@export
+#'@param WIP
+#'@return WIP
+
 kModeProduct <- function(tnsr,mat,m){
 
 
-	#'@export
-	#'@param WIP
-	#'@return WIP
 	tnsr.mat <- kModeUnfold(tnsr,m)
 	tnsr.mat <- as.simple_triplet_matrix(tnsr.mat)
 	if(class(mat)!='simple_triplet_matrix') mat <- as.simple_triplet_matrix(mat)

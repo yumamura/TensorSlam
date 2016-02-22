@@ -1,9 +1,10 @@
+#' Calc HOSVD
 
+#'@export
+#'@param WIP
+#'@return WIP
 HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
 
-	#'@export
-	#'@param WIP
-	#'@return WIP
 	if(1==0){
 		hosvd_res <- HOSVD(y,core_dims)
 		res <- hosvd(as.tensor(as.array(y)),core_dims)

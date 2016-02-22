@@ -1,8 +1,11 @@
-checkDiff <- function(Xnew,Xold){ #2つのテンソルを受け取り，その変化率を計算する 変化率は|Xnew-Xold|/|Xold| ノルムはフロベニウス
-	#'@export
-	#'@param WIP
-	#'@return WIP
+#' checkDiff
 
+#'@export
+#'@param WIP
+#'@return WIP
+
+
+checkDiff <- function(Xnew,Xold){ #2つのテンソルを受け取り，その変化率を計算する 変化率は|Xnew-Xold|/|Xold| ノルムはフロベニウス
 	if(0){
 		Xnew <- array(1:8,dim=c(2,2,2))
 		Xnew <- array(2,dim=c(2,2,2))

@@ -1,8 +1,11 @@
+#' Refold
+
+#'@export
+#'@param WIP
+#'@return WIP
+
 Refold <- function(mat,dimToRecover,mode){ #行列化されたやつを再びテンソルに
 
-	#'@export
-	#'@param WIP
-	#'@return WIP
 	#dimToRecoverの長さはtnsrの次元
 	recoverOrder <- c(dimToRecover[mode],dimToRecover[-mode])
 	mode.num <- c(mode,(1:length(dimToRecover))[-mode])

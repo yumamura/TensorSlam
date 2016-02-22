@@ -1,7 +1,10 @@
+#' kModeUnfold
+
+#'@export
+#'@param WIP
+#'@return WIP
+
 kModeUnfold <- function(tnsr,m){ #モードk 行列化
-	#'@export
-	#'@param WIP
-	#'@return WIP
 	if(class(tnsr)=='array'){
 		mat <- t(apply(tnsr,m,cBind))
 		return(mat)

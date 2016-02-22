@@ -1,27 +1,13 @@
-# library(slam)
+#' FSTD
 
-if(1==0){
-	load('~/Dropbox/Labtmp/tnsr/0d_20141201_sanihour44.Rdata')
-	load('/home/data/incident/murakami/NTDvsNMF/TnsrDataMorto0708id20.Rdata')
-	ranks <- c(3,3,3)
-	library(R.matlab)
-	Y <- readMat(con = '~/Downloads/Y.mat')
-	Y <- readMat(con = '~/Documents/MATLAB/Y.mat')
-	Y <- Y$Y
-	library(slam)
-	Y <- as.simple_sparse_array(Y)
-	k <- 5
-	eps <- 0.0001
-
-}
-
+#'@export
+#'@param Y WIP
+#'@param k WIP
+#'@return WIP
 
 
 
 FSTDFixedFNum <- function(Y,k){
-	#'@export
-	#'@param WIP
-	#'@return WIP
 	I <- dim(Y)
 	N <- length(I)
 	# 

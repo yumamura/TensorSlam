@@ -1,9 +1,12 @@
+#' reconstruct Tucker Result
+
+#'@export
+#'@param WIP
+#'@return WIP
+
 
 reconstTucker <- function(core,Wlist){
 
-	#'@export
-	#'@param WIP
-	#'@return WIP
 	for(i in 1:length(Wlist)){
 		core <- kModeProduct(tnsr=core,mat=Wlist[[i]],m=i)
 	}
