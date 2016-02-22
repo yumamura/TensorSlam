@@ -13,5 +13,6 @@ Imports:
     dplyr,
     slam,
     irlba,
-    doMC
+    doMC,
+    Matrix
 RoxygenNote: 5.0.1
