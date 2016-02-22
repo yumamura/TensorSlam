@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+\.DS_Store
+\.travis\.yml
+\.git/*
+\.Rhistory
+\.Rproj
