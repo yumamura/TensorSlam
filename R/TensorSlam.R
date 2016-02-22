@@ -1,5 +1,6 @@
 #' SparseTensor Calculation with Slam Package
 #'@name TensorSlam
 #'@docType package
-#'@import dplyr slam irlba doMC Matrix MASS foreach
+#'@importFrom MASS ginv
+#'@import slam irlba doMC Matrix foreach dplyr
 NULL
