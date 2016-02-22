@@ -2,10 +2,17 @@
 % Please edit documentation in R/reconstTucker.R
 \name{reconstTucker}
 \alias{reconstTucker}
+\title{reconstruct Tucker Result}
 \usage{
 reconstTucker(core, Wlist)
 }
+\arguments{
+\item{core}{WIP}
+}
 \value{
 WIP
+}
+\description{
+reconstruct Tucker Result
 }
 

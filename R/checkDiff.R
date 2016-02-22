@@ -1,7 +1,8 @@
 #' checkDiff
 
 #'@export
-#'@param WIP
+#'@param Xnew WIP
+#'@param Xold WIP
 #'@return WIP
 
 

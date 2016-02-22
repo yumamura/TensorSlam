@@ -1,7 +1,7 @@
 #' Calc Nonnegative-Tucker-Decomposition
 
 #'@export
-#'@param WIP
+#'@param y WIP
 #'@return WIP
 MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD',convDebug=F){
 

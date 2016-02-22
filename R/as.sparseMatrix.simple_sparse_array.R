@@ -1,7 +1,7 @@
 #' 2-dimensional array(from Slam) -> sparseMatrix(from Matrix)
 
 #'@export
-#'@param WIP
+#'@param mat WIP
 #'@return WIP
 
 as.sparseMatrix.simple_sparse_array <- function(mat){

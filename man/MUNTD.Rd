@@ -2,11 +2,18 @@
 % Please edit documentation in R/MUNTD.R
 \name{MUNTD}
 \alias{MUNTD}
+\title{Calc Nonnegative-Tucker-Decomposition}
 \usage{
 MUNTD(y, core_dims = ceiling(dim(y)/5), lra_ranks = core_dims,
   method = "FSTD", convDebug = F)
 }
+\arguments{
+\item{y}{WIP}
+}
 \value{
 WIP
+}
+\description{
+Calc Nonnegative-Tucker-Decomposition
 }
 

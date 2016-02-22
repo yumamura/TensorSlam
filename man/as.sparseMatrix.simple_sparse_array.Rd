@@ -2,10 +2,17 @@
 % Please edit documentation in R/as.sparseMatrix.simple_sparse_array.R
 \name{as.sparseMatrix.simple_sparse_array}
 \alias{as.sparseMatrix.simple_sparse_array}
+\title{2-dimensional array(from Slam) -> sparseMatrix(from Matrix)}
 \usage{
 as.sparseMatrix.simple_sparse_array(mat)
 }
+\arguments{
+\item{mat}{WIP}
+}
 \value{
 WIP
+}
+\description{
+2-dimensional array(from Slam) -> sparseMatrix(from Matrix)
 }
 

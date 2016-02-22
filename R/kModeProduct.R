@@ -1,7 +1,9 @@
 #' kModeProduct
 
 #'@export
-#'@param WIP
+#'@param tnsr WIP
+#'@param mat WIP
+#'@param m WIP
 #'@return WIP
 
 kModeProduct <- function(tnsr,mat,m){

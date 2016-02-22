@@ -1,7 +1,7 @@
 #' SVD with irlba
 
 #'@export
-#'@param WIP
+#'@param mat WIP
 #'@return WIP
 
 smartsvd <- function(mat,rank=10,nu=3,nv=3){

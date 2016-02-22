@@ -1,3 +1,10 @@
+#' Other Modules
+
+#' @param C WIP
+#' @name WIP
+NULL
+
+#' @rdname WIP
 inew <- function(C,old_ind){
 	n <- dim(C)[1]
 	vec <- rep(0,n)
@@ -31,6 +38,8 @@ inew <- function(C,old_ind){
 	return(ind)
 }
 
+
+#' @rdname WIP
 FSTD <- function(Y,k,eps=NULL){
 	#'@param WIP
 	#'@return WIP

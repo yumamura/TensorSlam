@@ -2,10 +2,21 @@
 % Please edit documentation in R/kModeProduct.R
 \name{kModeProduct}
 \alias{kModeProduct}
+\title{kModeProduct}
 \usage{
 kModeProduct(tnsr, mat, m)
 }
+\arguments{
+\item{tnsr}{WIP}
+
+\item{mat}{WIP}
+
+\item{m}{WIP}
+}
 \value{
 WIP
+}
+\description{
+kModeProduct
 }
 

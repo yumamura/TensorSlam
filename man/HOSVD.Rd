@@ -2,10 +2,17 @@
 % Please edit documentation in R/HOSVD.R
 \name{HOSVD}
 \alias{HOSVD}
+\title{Calc HOSVD}
 \usage{
 HOSVD(tnsr, ranks = ceiling(dim(tnsr)/10), doMC = T)
 }
+\arguments{
+\item{tnsr}{WIP}
+}
 \value{
 WIP
+}
+\description{
+Calc HOSVD
 }
 

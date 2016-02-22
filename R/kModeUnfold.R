@@ -1,7 +1,8 @@
 #' kModeUnfold
 
 #'@export
-#'@param WIP
+#'@param tnsr WIP
+#'@param m WIP
 #'@return WIP
 
 kModeUnfold <- function(tnsr,m){ #モードk 行列化

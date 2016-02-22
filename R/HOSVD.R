@@ -1,7 +1,7 @@
 #' Calc HOSVD
 
 #'@export
-#'@param WIP
+#'@param tnsr WIP
 #'@return WIP
 HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
 

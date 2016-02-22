@@ -1,7 +1,7 @@
 #' reconstruct MUNTD result
 
 #'@export
-#'@param WIP
+#'@param res WIP
 #'@return WIP
 ReconstMUNTD <- function(res){
 

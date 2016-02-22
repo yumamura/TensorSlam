@@ -2,10 +2,17 @@
 % Please edit documentation in R/reconstHOSVD.R
 \name{reconstHOSVD}
 \alias{reconstHOSVD}
+\title{reconstruct HOSVD result}
 \usage{
 reconstHOSVD(hosvd_res)
 }
+\arguments{
+\item{hosvd_res}{WIP}
+}
 \value{
 WIP
+}
+\description{
+reconstruct HOSVD result
 }
 

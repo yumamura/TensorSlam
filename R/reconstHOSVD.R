@@ -1,7 +1,7 @@
 #' reconstruct HOSVD result
 
 #'@export
-#'@param WIP
+#'@param hosvd_res WIP
 #'@return WIP
 
 reconstHOSVD <- function(hosvd_res){

@@ -2,10 +2,19 @@
 % Please edit documentation in R/kModeUnfold.R
 \name{kModeUnfold}
 \alias{kModeUnfold}
+\title{kModeUnfold}
 \usage{
 kModeUnfold(tnsr, m)
 }
+\arguments{
+\item{tnsr}{WIP}
+
+\item{m}{WIP}
+}
 \value{
 WIP
+}
+\description{
+kModeUnfold
 }
 

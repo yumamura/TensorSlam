@@ -2,10 +2,19 @@
 % Please edit documentation in R/checkDiff.R
 \name{checkDiff}
 \alias{checkDiff}
+\title{checkDiff}
 \usage{
 checkDiff(Xnew, Xold)
 }
+\arguments{
+\item{Xnew}{WIP}
+
+\item{Xold}{WIP}
+}
 \value{
 WIP
+}
+\description{
+checkDiff
 }
 

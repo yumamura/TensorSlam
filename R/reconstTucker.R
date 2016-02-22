@@ -1,7 +1,7 @@
 #' reconstruct Tucker Result
 
 #'@export
-#'@param WIP
+#'@param core WIP
 #'@return WIP
 
 

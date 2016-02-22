@@ -2,10 +2,17 @@
 % Please edit documentation in R/Refold.R
 \name{Refold}
 \alias{Refold}
+\title{Refold}
 \usage{
 Refold(mat, dimToRecover, mode)
 }
+\arguments{
+\item{mat}{WIP}
+}
 \value{
 WIP
+}
+\description{
+Refold
 }
 
