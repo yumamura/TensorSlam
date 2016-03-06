@@ -1,9 +1,9 @@
 #' kModeUnfold
 
 #'@export
-#'@param tnsr WIP
-#'@param m WIP
-#'@return WIP
+#'@param tnsr simple_sparse_array
+#'@param m mode index to unfold
+#'@return 2-dimensional simple_sparse_array (not simple_triplet_matrix)
 
 kModeUnfold <- function(tnsr,m){ #モードk 行列化
 	if(class(tnsr)=='array'){
@@ -11,51 +11,34 @@ kModeUnfold <- function(tnsr,m){ #モードk 行列化
 		return(mat)
 	}
 	if(class(tnsr)=='simple_sparse_array'){
-		if(prod(dim(tnsr))==1){
+		if(prod(dim(tnsr))==1){ #大きさの全積が1,実質スカラーの時
 			if(as.array(tnsr)[1]!=0){
 				mat <- matrix(tnsr$v)
 			}else{
 				mat <- matrix(0)
 			}
 			return(mat)
-
-
-
 		}else{
-			#                         print('tnsr')
-			#                         print(as.array(tnsr))
-			#                         print(tnsr$i)
-			#                         print(tnsr$v)
-			#                         print('tnsr dim')
-			#                         print(dim(tnsr))
-			#                         print('m')
-			#                         print(m)
-			if(ncol(tnsr$i)!=3){
-				tnsr <- as.simple_sparse_array(as.array(tnsr))
-			}
-			mat.nrow <- dim(tnsr)[m]
-			mat.ncol <- prod(dim(tnsr)[-m])
-			mat.rowIdx <- tnsr$i[,m]
-			mat.colIdx <- tnsr$i[,-m]
-			if(class(mat.colIdx)=='integer'){
-				mat.colIdx <- t(as.matrix(mat.colIdx))
-			}
-			if(class(mat.colIdx)=='numeric'){
-				mat.colIdx <- t(as.matrix(mat.colIdx))
-			}
-			mat.colIdx[,2:ncol(mat.colIdx)] <- mat.colIdx[,2:ncol(mat.colIdx)]-1
-			shift.index <- dim(tnsr)[-m]
-			shift.index <- c(1,cumprod(shift.index))[1:(length(dim(tnsr))-1)]
-			mat.colIdx <- mat.colIdx %*% shift.index
+			#インデックス変更時に使うテーブル
+			hashMat <- dim(tnsr)
+			hashMat <- rbind(dimSize=hashMat,dimIdx=1:length(dim(tnsr)))
 			
-			tnsr$i <- cbind(mat.rowIdx,mat.colIdx)
-			dimnames(tnsr$i) <- NULL
-			tnsr$dim <- c(mat.nrow,mat.ncol)
-			tnsr$dimnames <- NULL
+			hashMatExc <- hashMat[,-m]
+			hashMatExc <- rbind(hashMatExc,multiply=c(1,cumprod(hashMatExc['dimSize',])[1:(ncol(hashMatExc)-1)])) #各次元インデックスの倍率
+
+			rowIdx <- tnsr$i[,m] #変換後の行位置
+			colIdxBase <- tnsr$i[,-m] #列位置計算のためのIndex
+			colIdxBase[,2:ncol(colIdxBase)] <- colIdxBase[,2:ncol(colIdxBase)]-1
+
+			colIdx <- colIdxBase %*% hashMatExc['multiply',]
+
+			mat <- tnsr
+			mat$i <- cbind(rowIdx,colIdx,deparse.level=0)
+			mat$v <- tnsr$v
+			mat$dim <- as.vector(c(hashMat['dimSize',m],prod(hashMatExc['dimSize',])))
+			return(mat)
 
 
-
-			return(tnsr)
 		}
 
 	}

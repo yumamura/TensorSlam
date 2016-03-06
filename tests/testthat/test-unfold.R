@@ -114,7 +114,7 @@ test_that('3d Sparse Tensor Unfold',{
 		 expect_equal(as.array(ans2),as.array(true2))
 
 		 ans3 <- kModeUnfold(input,3)
-		 true3 <- as.simple_sparse_array(matrix(c(rep(1:3,3),rep(0,18)),3,9,byrow=F))
+		 true3 <- as.simple_sparse_array(matrix(c(rep(1,3),rep(2,3),rep(3,3),rep(0,18)),3,9,byrow=F))
 		 true3$dimnames <- NULL
 
 		 expect_equal(dim(ans3),dim(true3)) 
