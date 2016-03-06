@@ -1,57 +1,37 @@
 #' Refold
 
 #'@export
-#'@param mat WIP
-#'@param dimToRecover WIP
-#'@param mode WIP
-#'@return WIP
+#'@param mat kModeUnfolded 2-dimensional simple_sparse_array (not simple_triplet_matrix)
+#'@param dimToRecover size of tensor to make
+#'@param mode mode of unfold
+#'@return folded tensor (simple_sparse_array)
 
 Refold <- function(mat,dimToRecover,mode){ #行列化されたやつを再びテンソルに
+	kIdx <- mat$i[,1] #tnsr$i の mode モード目に入る 	
+	colIdx <- mat$i[,2] #matの列位置 処理の主役
+	max_itr <- length(dimToRecover)-1 #dim(tnsr)-1だけindexを戻す処理を繰り返す
+	factr <- rev(c(1,cumprod(dimToRecover[-mode]))[-length(dimToRecover)])
 
-	#dimToRecoverの長さはtnsrの次元
-	recoverOrder <- c(dimToRecover[mode],dimToRecover[-mode])
-	mode.num <- c(mode,(1:length(dimToRecover))[-mode])
-	index <- mat$i
-
-	cumdim <- c(recoverOrder)[2:(length(dimToRecover))]
-	cumdim <- cumprod(cumdim)
-	for(i in 1:(length(cumdim))){
-		if(i==1){
-			tmp <- (index[,2])%%cumdim[i]
-			tmp[which(tmp==0)] <- cumdim[i]
-		}else{
-			tmp <- (index[,2]-1) %/% cumdim[i-1] + 1
-		}	
-		index <- cbind(index,tmp)
+	i <- 1
+	indexMat <- c()
+	while(i<=max_itr){
+			index <- (colIdx -1)%/% factr[i] +1 #new index of mode i
+			indexMat <- cbind(indexMat,index,deparse.level=0)
+			sp <- colIdx %% factr[i]
+			sp[which(sp==0)] <- factr[i]
+			colIdx <- sp
+			i <- i+1
 	}
-	index <- index[,c(-2)]
-	if(class(index)=='numeric')index <- t(as.matrix(index))
-	#         swap.idx <- 1:ncol(index)
-	#         swap.idx <- swap.idx[-mode]
-	#         swap.idx <- c(mode,swap.idx)
-	tmp <- index[,1]
-	index <- index[,-1]
-	ncolIndex <- ncol(index)
-	#         browser()
-	if(is.null(ncolIndex)) ncolIndex <- length(index)
-	if(mode==1){
-		index <- cbind(tmp,index)
-	}else if(mode==(ncolIndex+1)){
-		index <- cbind(index,tmp)
+	indexMat <- indexMat[,rev(1:ncol(indexMat))]
+	if(mode<=ncol(indexMat)){
+	indexMat <- indexMat[,append(1:ncol(indexMat),values = mode,after= mode)] #kIdxのための場所確保
+	indexMat[,mode] <- kIdx
 	}else{
-		if(class(index)=='numeric')index <- t(as.matrix(index))
-		index <- cbind(index[,1:(mode-1)],tmp,index[,mode:ncolIndex])
+		indexMat <- cbind(indexMat,kIdx,deparse.level=0)
 	}
-
-	#         
-
-	#         browser()
-	#         index <- index[,swap.idx]
-
-
 
 	tnsr <- mat
-	tnsr$i <- index
+	tnsr$i <- indexMat
 	tnsr$v <- mat$v
 	tnsr$dim <- dimToRecover
 	return(tnsr)
