@@ -7,12 +7,12 @@
 kModeUnfold(tnsr, m)
 }
 \arguments{
-\item{tnsr}{WIP}
+\item{tnsr}{simple_sparse_array}
 
-\item{m}{WIP}
+\item{m}{mode index to unfold}
 }
 \value{
-WIP
+2-dimensional simple_sparse_array (not simple_triplet_matrix)
 }
 \description{
 kModeUnfold

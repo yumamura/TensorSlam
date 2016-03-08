@@ -7,14 +7,14 @@
 Refold(mat, dimToRecover, mode)
 }
 \arguments{
-\item{mat}{WIP}
+\item{mat}{kModeUnfolded 2-dimensional simple_sparse_array (not simple_triplet_matrix)}
 
-\item{dimToRecover}{WIP}
+\item{dimToRecover}{size of tensor to make}
 
-\item{mode}{WIP}
+\item{mode}{mode of unfold}
 }
 \value{
-WIP
+folded tensor (simple_sparse_array)
 }
 \description{
 Refold
