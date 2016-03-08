@@ -7,14 +7,14 @@
 kModeProduct(tnsr, mat, m)
 }
 \arguments{
-\item{tnsr}{WIP}
+\item{tnsr}{simple_sparse_array}
 
-\item{mat}{WIP}
+\item{mat}{simple_sparse_array or simple_triplet_matrix or matrix. nrow(mat) should be equal to dim(tnsr)[m]}
 
-\item{m}{WIP}
+\item{m}{mode}
 }
 \value{
-WIP
+product. simple_sparse_array.
 }
 \description{
 kModeProduct

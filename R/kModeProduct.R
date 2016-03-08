@@ -1,10 +1,10 @@
 #' kModeProduct
 
 #'@export
-#'@param tnsr WIP
-#'@param mat WIP
-#'@param m WIP
-#'@return WIP
+#'@param tnsr simple_sparse_array 
+#'@param mat simple_sparse_array or simple_triplet_matrix or matrix. nrow(mat) should be equal to dim(tnsr)[m] 
+#'@param m mode 
+#'@return product. simple_sparse_array.
 
 kModeProduct <- function(tnsr,mat,m){
 

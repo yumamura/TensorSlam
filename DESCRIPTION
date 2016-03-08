@@ -8,7 +8,8 @@ Maintainer: liberaldays <liberaldays@example.com>
 Description: Define some Tensor Calculation for simple_sparse_array with slam Package
 License: MIT + file LICENSE
 Suggests:
-    testthat
+    testthat,
+    rTensor
 Imports:
     dplyr,
     slam,
