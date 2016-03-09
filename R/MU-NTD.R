@@ -1,3 +1,4 @@
+#OLD FUNCTION. 
 library(slam)
 library(doMC)
 
