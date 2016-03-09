@@ -1,10 +1,10 @@
 #' Calc HOSVD
 
 #'@export
-#'@param tnsr WIP
-#'@param ranks WIP
-#'@param doMC WIP
-#'@return WIP
+#'@param tnsr Tensor. simple_sparse_array
+#'@param ranks ranks 
+#'@param doMC Use doMC for parallel calculation or not.
+#'@return list. $g is a core tensor (simple_sparse_array) $U is a list that contains matrix (matrix)
 HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
 
 	#         if(1==0){
