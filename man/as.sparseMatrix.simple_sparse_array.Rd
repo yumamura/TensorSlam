@@ -7,10 +7,10 @@
 as.sparseMatrix.simple_sparse_array(mat)
 }
 \arguments{
-\item{mat}{WIP}
+\item{mat}{simple_sparse_array (not simple_triplet_matrix)}
 }
 \value{
-WIP
+sparseMatrix
 }
 \description{
 2-dimensional array(from Slam) -> sparseMatrix(from Matrix)

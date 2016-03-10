@@ -7,14 +7,14 @@
 HOSVD(tnsr, ranks = ceiling(dim(tnsr)/10), doMC = T)
 }
 \arguments{
-\item{tnsr}{WIP}
+\item{tnsr}{Tensor. simple_sparse_array}
 
-\item{ranks}{WIP}
+\item{ranks}{ranks}
 
-\item{doMC}{WIP}
+\item{doMC}{Use doMC for parallel calculation or not.}
 }
 \value{
-WIP
+list. $g is a core tensor (simple_sparse_array) $U is a list that contains matrix (matrix)
 }
 \description{
 Calc HOSVD
