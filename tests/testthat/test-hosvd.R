@@ -7,7 +7,7 @@ test_that('3d small size HOSVD',{
 	trueCore <- (true$Z)@data
 	trueMatList <- true$U
 
-	ans <- HOSVD(as.simple_sparse_array(tnsr),c(2,2,2))
+	ans <- HOSVD(as.simple_sparse_array(tnsr),c(2,2,2),doMC=F)
 	ansCore <- as.array(ans$g)
 	ansMatList <- ans$As
 
@@ -22,7 +22,7 @@ test_that('4d small size HOSVD',{
 	trueCore <- (true$Z)@data
 	trueMatList <- true$U
 
-	ans <- HOSVD(as.simple_sparse_array(tnsr),c(2,2,2,2))
+	ans <- HOSVD(as.simple_sparse_array(tnsr),c(2,2,2,2),doMC=F)
 	ansCore <- as.array(ans$g)
 	ansMatList <- ans$As
 
