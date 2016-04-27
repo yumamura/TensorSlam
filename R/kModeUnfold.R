@@ -26,8 +26,8 @@ kModeUnfold <- function(tnsr,m){ #モードk 行列化
 			hashMatExc <- hashMat[,-m]
 			hashMatExc <- rbind(hashMatExc,multiply=c(1,cumprod(hashMatExc['dimSize',])[1:(ncol(hashMatExc)-1)])) #各次元インデックスの倍率
 
-			rowIdx <- tnsr$i[,m] #変換後の行位置
-			colIdxBase <- tnsr$i[,-m] #列位置計算のためのIndex
+			rowIdx <- tnsr$i[,m,drop=F] #変換後の行位置
+			colIdxBase <- tnsr$i[,-m,drop=F] #列位置計算のためのIndex
 			colIdxBase[,2:ncol(colIdxBase)] <- colIdxBase[,2:ncol(colIdxBase)]-1
 
 			colIdx <- colIdxBase %*% hashMatExc['multiply',]
