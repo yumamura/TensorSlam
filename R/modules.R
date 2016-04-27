@@ -33,8 +33,24 @@ inew <- function(C,old_ind){
 		ind <- ind[9]
 	}else if(!any(old_ind==ind[10])){
 		ind <- ind[10]
-	}else{
+	}else if(!any(old_ind==ind[11])){
 		ind <- ind[11]
+	}else if(!any(old_ind==ind[12])){
+		ind <- ind[12]
+	}else if(!any(old_ind==ind[13])){
+		ind <- ind[13]
+	}else if(!any(old_ind==ind[14])){
+		ind <- ind[14]
+	}else if(!any(old_ind==ind[15])){
+		ind <- ind[15]
+	}else if(!any(old_ind==ind[16])){
+		ind <- ind[16]
+	}else if(!any(old_ind==ind[17])){
+		ind <- ind[17]
+	}else if(!any(old_ind==ind[18])){
+		ind <- ind[18]
+	}else{
+		ind <- ind[19]
 	}
 	return(ind)
 }
