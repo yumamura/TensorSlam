@@ -90,3 +90,23 @@ test_that('4d Sparse Tensor Unfold',{
 		  expect_equal(as.array(ans),true@data)
 
 })
+
+test_that('input is array',{
+		  library(rTensor)
+		  set.seed(123)
+
+		  arr <- array(runif(27),c(3,3,3))
+		  ans <- kModeUnfold(arr,1)
+		  true <- k_unfold(tnsr = as.tensor(arr),m = 1)
+		  expect_equal(as.array(ans),true@data)
+})
+
+test_that('input is nonzero scalar',{
+		  arr <- as.simple_sparse_array(10)
+		  expect_equal(as.array(kModeUnfold(arr,1)),as.array(10))
+})
+	
+test_that('input is zero scalar',{
+		  arr <- as.simple_sparse_array(0)
+		  expect_equal(as.array(kModeUnfold(arr,1)),as.array(0))
+})	  

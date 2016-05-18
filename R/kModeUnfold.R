@@ -1,19 +1,19 @@
 #' kModeUnfold
 
 #'@export
-#'@param tnsr simple_sparse_array
+#'@param tnsr simple_sparse_array (or array)
 #'@param m mode index to unfold
 #'@return 2-dimensional simple_sparse_array (not simple_triplet_matrix)
 
 kModeUnfold <- function(tnsr,m){ #モードk 行列化
 	if(class(tnsr)=='array'){
-		mat <- t(apply(tnsr,m,cBind))
-		return(mat)
+		tnsr <- as.simple_sparse_array(tnsr)
 	}
 	if(class(tnsr)=='simple_sparse_array'){
 		if(prod(dim(tnsr))==1){ #大きさの全積が1,実質スカラーの時
 			if(as.array(tnsr)[1]!=0){
-				mat <- matrix(tnsr$v)
+				mat <- matrix(tnsr$v)	
+				mat <- as.simple_sparse_array(mat)
 			}else{
 				mat <- matrix(0)
 			}
@@ -41,6 +41,8 @@ kModeUnfold <- function(tnsr,m){ #モードk 行列化
 
 		}
 
+	}else{
+		stop('unsupported input class')
 	}
 
 }
