@@ -3,7 +3,7 @@
 #'@export
 #'@param tnsr simple_sparse_array (or array)
 #'@param m mode index to unfold
-#'@return 2-dimensional simple_sparse_array (not simple_triplet_matrix)
+#'@return 2-dimensional simple_sparse_array (not simple_triplet_matrix). If input is zero, matrix(0) will be returned.
 
 kModeUnfold <- function(tnsr,m){ #モードk 行列化
 	if(class(tnsr)=='array'){
@@ -16,6 +16,7 @@ kModeUnfold <- function(tnsr,m){ #モードk 行列化
 				mat <- as.simple_sparse_array(mat)
 			}else{
 				mat <- matrix(0)
+				mat <- as.simple_sparse_array(mat)
 			}
 			return(mat)
 		}else{

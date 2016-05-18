@@ -7,12 +7,12 @@
 kModeUnfold(tnsr, m)
 }
 \arguments{
-\item{tnsr}{simple_sparse_array}
+\item{tnsr}{simple_sparse_array (or array)}
 
 \item{m}{mode index to unfold}
 }
 \value{
-2-dimensional simple_sparse_array (not simple_triplet_matrix)
+2-dimensional simple_sparse_array (not simple_triplet_matrix). If input is zero, matrix(0) will be returned.
 }
 \description{
 kModeUnfold

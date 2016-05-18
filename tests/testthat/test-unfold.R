@@ -103,10 +103,10 @@ test_that('input is array',{
 
 test_that('input is nonzero scalar',{
 		  arr <- as.simple_sparse_array(10)
-		  expect_equal(as.array(kModeUnfold(arr,1)),as.array(10))
+		  expect_equal(as.array(kModeUnfold(arr,1)),matrix(10))
 })
 	
 test_that('input is zero scalar',{
 		  arr <- as.simple_sparse_array(0)
-		  expect_equal(as.array(kModeUnfold(arr,1)),as.array(0))
+		  expect_equal(as.array(kModeUnfold(arr,1)),matrix(0))
 })	  
