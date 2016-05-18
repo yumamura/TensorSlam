@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkDiff.R
 \name{checkDiff}
 \alias{checkDiff}
-\title{checkDiff}
+\title{checkDiff Dense Tensor only. DO NOT USE FOR HUGE TENSOR.}
 \usage{
 checkDiff(Xnew, Xold)
 }
@@ -15,6 +15,6 @@ checkDiff(Xnew, Xold)
 WIP
 }
 \description{
-checkDiff
+checkDiff Dense Tensor only. DO NOT USE FOR HUGE TENSOR.
 }
 
