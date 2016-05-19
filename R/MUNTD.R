@@ -1,12 +1,12 @@
 #' Calc Nonnegative-Tucker-Decomposition
 
 #'@export
-#'@param y WIP
-#'@param core_dims WIP
-#'@param lra_ranks WIP
-#'@param method WIP
+#'@param y Input tensor. simple_spase_array
+#'@param core_dims Number of Features/Size of core tensor. vector 
+#'@param lra_ranks Ranks for Low Rank Approximation. numeric
+#'@param method Methods for Low Rank Approximation. 'FSTD'/'HOSVD'
 #'@param convDebug WIP
-#'@return WIP
+#'@return list. $g:core tensor (array) $As:Feature matrices (list,each matrix is matrix-class)
 MUNTD <- function(y,core_dims=ceiling(dim(y)/5),lra_ranks=core_dims,method='FSTD',convDebug=F){
 
 	eps <- 2.2204e-16

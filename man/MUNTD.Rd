@@ -8,18 +8,18 @@ MUNTD(y, core_dims = ceiling(dim(y)/5), lra_ranks = core_dims,
   method = "FSTD", convDebug = F)
 }
 \arguments{
-\item{y}{WIP}
+\item{y}{Input tensor. simple_spase_array}
 
-\item{core_dims}{WIP}
+\item{core_dims}{Number of Features/Size of core tensor. vector}
 
-\item{lra_ranks}{WIP}
+\item{lra_ranks}{Ranks for Low Rank Approximation. numeric}
 
-\item{method}{WIP}
+\item{method}{Methods for Low Rank Approximation. 'FSTD'/'HOSVD'}
 
 \item{convDebug}{WIP}
 }
 \value{
-WIP
+list. $g:core tensor (array) $As:Feature matrices (list,each matrix is matrix-class)
 }
 \description{
 Calc Nonnegative-Tucker-Decomposition
