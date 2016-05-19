@@ -7,12 +7,12 @@
 FSTDFixedFNum(Y, k)
 }
 \arguments{
-\item{Y}{WIP}
+\item{Y}{saimple_sparse_array (3rd-order tensor only)}
 
-\item{k}{WIP}
+\item{k}{numeric. number of fibers to be picked up.}
 }
 \value{
-WIP
+list. $g is core tensor array. $As is feature matrices' list.
 }
 \description{
 FSTD
