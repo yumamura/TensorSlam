@@ -20,9 +20,9 @@ test_that('FSTD-MUNTD',{
 		  res <- MUNTD(tnsr,core_dims=c(2,2,2),lra_ranks=c(3),method='FSTD')
 
 		  expect_equal(dim(res$g),c(2,2,2)) 
-		  expect_equal(dim(res$As[[1]]),c(6,2)) 
-		  expect_equal(dim(res$As[[2]]),c(6,2)) 
-		  expect_equal(dim(res$As[[3]]),c(6,2)) 
+		  expect_equal(dim(res$As[[1]]),c(10,2)) 
+		  expect_equal(dim(res$As[[2]]),c(10,2)) 
+		  expect_equal(dim(res$As[[3]]),c(10,2)) 
 
 		  expect_equal(class(res$g),'array') 
 		  expect_equal(class(res$As[[1]]),'matrix') 
