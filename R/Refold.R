@@ -22,9 +22,9 @@ Refold <- function(mat,dimToRecover,mode){ #行列化されたやつを再びテ
 			colIdx <- sp
 			i <- i+1
 	}
-	indexMat <- indexMat[,rev(1:ncol(indexMat))]
+	indexMat <- indexMat[,rev(1:ncol(indexMat)),drop=F]
 	if(mode<=ncol(indexMat)){
-	indexMat <- indexMat[,append(1:ncol(indexMat),values = mode,after= mode)] #kIdxのための場所確保
+	indexMat <- indexMat[,append(1:ncol(indexMat),values = mode,after= mode),drop=F] #kIdxのための場所確保
 	indexMat[,mode] <- kIdx
 	}else{
 		indexMat <- cbind(indexMat,kIdx,deparse.level=0)
