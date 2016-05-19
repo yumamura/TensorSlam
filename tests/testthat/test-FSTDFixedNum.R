@@ -15,6 +15,6 @@ test_that('3d FSTD',{
 		  expect_equal(class(res$As[[2]]),'simple_triplet_matrix')
 		  expect_equal(class(res$As[[3]]),'simple_triplet_matrix')
 			
-		#TODO: seed固定で必ず同じ結果が返るように
+		#TODO: FIX seed?
 		 
 })
