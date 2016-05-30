@@ -145,3 +145,26 @@ FSTD <- function(Y,k,eps=NULL){
 
 
 
+#' @rdname WIP
+#' @param arrName WIP
+#' @param ind WIP
+
+extractArrayExpr <- function(arrName,ind){
+	#多次元配列の次元が様々でも，配列名とインデックスを与えるだけでその場所を取り出してくるための文字列を返す
+	#hoge[,,,] hoge[,,] hoge[,] と書き分けるのが面倒な時に
+	stopifnot(class(arrName)=='character')
+
+	header <- paste0(arrName,'[')
+	footer <- ']'
+
+	content <- sapply(1:length(ind),function(i){
+				  content <- paste0('c(',toString(ind[[i]]),')')
+})
+	content <- toString(content)
+	res <- paste0(header,content,footer) 
+	#eval(parse(text=res)) #この場で評価はしない
+	return(res)
+}
+	
+
+

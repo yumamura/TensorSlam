@@ -5,14 +5,12 @@
 #'@param k numeric. number of fibers to be picked up.
 #'@return list. $g is core tensor array. $As is feature matrices' list.
 
-
-
 FSTDFixedFNum <- function(Y,k){
 	I <- dim(Y)
 	N <- length(I)
 
 	dat <- data.frame(Y$i,Y$v)
-	indexTmp <- as.numeric(dat[which.max(dat[,4]),1:3])
+	indexTmp <- as.numeric(dat[which.max(dat[,N+1]),1:N]) #最初のFiberを選択
 	index <- list()
 	for(i in 1:length(indexTmp)){
 		index[[i]] <- indexTmp[i]
@@ -41,7 +39,7 @@ FSTDFixedFNum <- function(Y,k){
 				Wpinv[[m]] <- ginv(as.simple_triplet_matrix(kModeUnfold(tnsr = W,m=m)))
 				ind <- index
 				ind[[m]] <- 1:I[m]
-				FIB[[m]] <- as.simple_triplet_matrix(kModeUnfold(Y[ind[[1]],ind[[2]],ind[[3]]],m))
+				FIB[[m]] <- as.simple_triplet_matrix(kModeUnfold(eval(parse(text=extractArrayExpr('Y',ind))),m))
 			}
 			U <- reconstTucker(core = W,Wlist = Wpinv)
 			if(n==N){
@@ -60,7 +58,7 @@ FSTDFixedFNum <- function(Y,k){
 			smat <- ssub
 			smat[nextInd] <- I[nextInd]
 
-			mother <- Y[ind[[1]],ind[[2]],ind[[3]]]
+			mother <- eval(parse(text=extractArrayExpr('Y',ind)))
 			child <- reconstTucker(core = U,Wlist = FIBred)
 			#diff
 			mother <- as.array(mother)
