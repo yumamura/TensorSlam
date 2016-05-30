@@ -3,12 +3,15 @@
 \name{WIP}
 \alias{FSTD}
 \alias{WIP}
+\alias{extractArrayExpr}
 \alias{inew}
 \title{Other Modules}
 \usage{
 inew(C, old_ind)
 
 FSTD(Y, k, eps = NULL)
+
+extractArrayExpr(arrName, ind)
 }
 \arguments{
 \item{C}{WIP}
@@ -20,6 +23,10 @@ FSTD(Y, k, eps = NULL)
 \item{k}{WIP}
 
 \item{eps}{WIP}
+
+\item{arrName}{WIP}
+
+\item{ind}{WIP}
 }
 \description{
 Other Modules
