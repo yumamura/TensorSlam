@@ -2,7 +2,7 @@ context('MUNTD')
 
 test_that('HOSVD-MUNTD',{
 		  tnsr <- as.simple_sparse_array(array(1:216,dim=c(6,6,6)))
-		  res <- MUNTD(tnsr,core_dims=c(2,2,2),lra_ranks=c(4),method='HOSVD')
+		  res <- MUNTD(tnsr,core_dims=c(2,2,2),lra_ranks=c(4,4,4),method='HOSVD')
 
 		  expect_equal(dim(res$g),c(2,2,2)) 
 		  expect_equal(dim(res$As[[1]]),c(6,2)) 
