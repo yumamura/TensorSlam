@@ -32,7 +32,7 @@ FSTDFixedFNum <- function(Y,k){
 				ssub[n] <- ssub[n]+1
 			}
 
-			W <- Y[index[[1]],index[[2]],index[[3]]]
+			W <- eval(parse(text=extractArrayExpr('Y',index)))
 			Wpinv <- list()
 			FIB <- list()
 			for(m in 1:N){
