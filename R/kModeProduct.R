@@ -7,8 +7,8 @@
 #'@return product. simple_sparse_array.
 
 kModeProduct <- function(tnsr,mat,m){
-
-
+	
+	stopifnot(dim(tnsr)[m]==ncol(mat))
 	tnsr.mat <- kModeUnfold(tnsr,m)
 	tnsr.mat <- as.simple_triplet_matrix(tnsr.mat)
 	if(class(mat)!='simple_triplet_matrix') mat <- as.simple_triplet_matrix(mat)
