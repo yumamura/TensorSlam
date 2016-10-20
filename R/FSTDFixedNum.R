@@ -9,6 +9,7 @@ FSTDFixedFNum <- function(Y,k){
 	I <- dim(Y)
 	N <- length(I)
 
+	Y$dimnames <- NULL
 	dat <- data.frame(Y$i,Y$v)
 	indexTmp <- as.numeric(dat[which.max(dat[,N+1]),1:N]) #最初のFiberを選択
 	index <- list()
