@@ -3,9 +3,9 @@
 #'@export
 #'@param tnsr Tensor. simple_sparse_array
 #'@param ranks ranks 
-#'@param doMC Use doMC for parallel calculation or not.
+#'@param doMC  EXPERIMENTAL. Use doMC for parallel calculation or not.
 #'@return list. $g is a core tensor (simple_sparse_array) $U is a list that contains matrix (matrix)
-HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=T){
+HOSVD <- function(tnsr,ranks=ceiling(dim(tnsr)/10),doMC=F){
 	mode.n <- NULL
 
 	#         if(1==0){
