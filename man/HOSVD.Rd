@@ -4,14 +4,14 @@
 \alias{HOSVD}
 \title{Calc HOSVD}
 \usage{
-HOSVD(tnsr, ranks = ceiling(dim(tnsr)/10), doMC = T)
+HOSVD(tnsr, ranks = ceiling(dim(tnsr)/10), doMC = F)
 }
 \arguments{
 \item{tnsr}{Tensor. simple_sparse_array}
 
 \item{ranks}{ranks}
 
-\item{doMC}{Use doMC for parallel calculation or not.}
+\item{doMC}{EXPERIMENTAL. Use doMC for parallel calculation or not.}
 }
 \value{
 list. $g is a core tensor (simple_sparse_array) $U is a list that contains matrix (matrix)
