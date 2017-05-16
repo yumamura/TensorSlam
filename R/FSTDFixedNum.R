@@ -1,7 +1,7 @@
 #' FSTD
 
 #'@export
-#'@param Y saimple_sparse_array (3rd-order tensor only)
+#'@param Y simple_sparse_array (3rd-order tensor only)
 #'@param k numeric. number of fibers to be picked up.
 #'@return list. $g is core tensor array. $As is feature matrices' list.
 
